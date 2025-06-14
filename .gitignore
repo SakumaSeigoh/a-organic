@@ -1,0 +1,10 @@
+*~
+.DS_Store
+
+# 設定系のファイル
+node_modules
+package-lock.json
+
+# メモ書きやアプリケーション用ファイル
+ReadMe.txt
+*.ai
