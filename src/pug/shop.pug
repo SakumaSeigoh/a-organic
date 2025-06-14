@@ -1,0 +1,62 @@
+doctype html
+html(lang='ja')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    title AKARI Organic
+    link(rel='icon', type='image/png', href='./img/favicon.png')
+    link(rel='stylesheet', content='text/plain', href='https://unpkg.com/ress/dist/ress.min.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Philosopher')
+    link(rel='stylesheet', href='./css/shop.css' media='screen and (min-width: 769px)')
+    link(rel='stylesheet', href='./css/sp_shop.css' media='screen and (max-width: 768px)')
+    script(type='text/javascript', src='./js/module/build.js')
+
+  body
+    include ./header.pug
+
+    div.page-title-area
+      div.page-title
+        p Shop
+
+    div.middle-bg
+
+    div.wrapper.shop-contents
+      div.sect-index
+        p 店舗情報
+        span.idx Shop
+
+      div.shop-info
+        div.map-area
+          img(src='../img/shop/map.png', alt='shop-location')
+          div.sect-btn
+            a.btn.btn-border(href='#') Google Map
+
+        div.info-contents
+          div.shop-idx
+            p.title AKARI Organic オリジナルショップ
+            p.explanation
+              span AKARI Organicの専門アドバイザーがカウンセリングを行い、お肌のタイプ・季節に合わせてあなただけのオリジナルコスメを調合いたします。
+            p.explanation
+              span 完全予約制となっておりますので、お電話にてご予約ください。
+
+          div.tel-btn
+            a.btn.btn-border(href="#") 06-XXXX-XXXX
+
+          div.shop-location
+            p 住所
+            p 大阪府堺市●●● xxx-xxxx
+            hr
+            p 営業時間
+            p 10:00 ~ 20:30
+            hr
+            p 定休日
+            p 火曜日
+            hr
+            p クレジットカード
+            p 可
+            hr
+            p 駐車場
+            p なし。近隣にコインパーキングあり。
+
+    include ./footer.pug

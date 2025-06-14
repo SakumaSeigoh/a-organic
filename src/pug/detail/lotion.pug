@@ -1,0 +1,80 @@
+doctype html
+html(lang='ja')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    title AKARI Organic
+    link(rel='icon', type='image/png', href='../img/favicon.png')
+    link(rel='stylesheet', content='text/plain', href='https://unpkg.com/ress/dist/ress.min.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Philosopher')
+    link(rel='stylesheet', href='../css/detail.css' media='screen and (min-width: 769px)')
+    link(rel='stylesheet', href='../css/sp_detail.css' media='screen and (max-width: 768px)')
+    script(type='text/javascript', src='../js/module/build.js')
+
+  body
+    include ../subpage-header.pug
+
+    div.page-title-area
+      div.page-title
+        p Lotion
+
+    div.middle-bg
+
+    section.wrapper.product-detail
+      div.sect-index
+        p 敏感肌用化粧水
+        span.idx Lotion
+
+      div.product-contents
+        img(src='../img/products/lotion_square.jpg', alt='Lotion')
+        div.pdct-detail
+          p.pdct-name 敏感肌用化粧水
+          p.pdct-index Lotion
+          div.pdct-description
+            p
+              | 植物エキスが肌をきめ細やかに整え滑らかにし、たっぷりと潤いを与えます。
+            p
+              | 説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト
+            p
+              | 説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト
+          p.pdct-size 250ml
+          p.pdct-price ¥3,000 （外税）
+
+          div.online-shop-btn
+            a.btn.btn-border(href="#") Online Shop
+
+      div.product-manual
+        div.product-usage
+          p.title 使用方法
+          p.explanation
+            span メイクを落とした後でご使用ください。適量を手に取り手のひらで温めるように広げてから、顔全体に馴染ませてください。感想が気になる場合は重ねて使用するとさらに保湿効果が高まります。
+
+        div.product-feature
+          p.title 特徴
+          p.explanation
+            span とろみのある濃厚なテクスチャー。ベタつかず浸透し、潤い肌が続きます。ローズエッセンシャルオイルの華やかな深い香りが、心も肌も心地よく包み込みます。
+
+    section.wrapper.products
+      div.sect-index
+        p 製品一覧
+        span.idx Products
+
+      div.product-list
+        div.item
+          a(href="#")
+            img(src="../img/top/products_01.jpg", alt="lotion")
+          p 敏感肌用化粧水
+        div.item
+          a(href="#")
+            img(src="../img/top/products_02.jpg", alt="milk")
+          p 敏感肌用乳液
+        div.item
+          a(href="#")
+            img(src="../img/top/products_03.jpg", alt="sorp")
+          p ハンドメイドソープ
+
+      div.sect-btn
+        a.btn.btn-border(href="#") Products
+
+    include ../subpage-footer.pug

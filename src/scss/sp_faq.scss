@@ -1,0 +1,66 @@
+@import "variables";
+@import "sp_common";
+
+/* ---------------------------------------
+  FAQ
+--------------------------------------- */
+
+@include pageHeaderAreaSP("../img/faq/title_04_faq.jpg");
+
+.faq-list
+{
+  margin: 40px 2%;
+
+  @include sectionIndex($main_color, #000, false);
+
+  .sect-main p
+  {
+    margin: 35px 0;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+
+  #question
+  {
+    .q-title
+    {
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-size: 12px;
+      margin: 20px 0 20px 0;
+      height: 35px;
+      padding-left: 8px;
+      background: $sub_color;
+      color: $main_color;
+      line-height: 2.2rem;
+
+      .q-btn
+      {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        background:url(../img/faq/toggle_close.png) no-repeat center center;
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+
+        &.selected
+        {
+          background:url(../img/faq/toggle_open.png) no-repeat center center;
+        }
+      }
+    }
+  }
+
+  .q-answer
+  {
+    margin: 0 auto;
+    width: 95%;
+    font-size: 12px;
+    height: auto;
+    display: none;
+  }
+}

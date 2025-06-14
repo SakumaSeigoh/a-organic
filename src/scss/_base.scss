@@ -1,0 +1,158 @@
+/* ---------------------------------------
+  サイト全体の共通設定
+--------------------------------------- */
+html
+{
+  font-size: 100%;
+}
+
+body
+{
+  font-family: "Yu Gothic Medium", "游ゴシック Medium", "YuGothic", "游ゴシック", "ヒラギノ角ゴ Pro W3", sans-serif;
+}
+
+a
+{
+  text-decoration: none;
+}
+
+img
+{
+  max-width: 100%;
+}
+
+.wrapper
+{
+  margin: 0 auto;
+  padding: 0 3%;
+}
+
+/* ---------------------------------------
+  サイト全体で使用する共通部品
+--------------------------------------- */
+
+// 共通のアンダーライン
+@mixin commonLine($width: 50%, $is_center: false)
+{
+  hr
+  {
+    width: $width;
+    height: 2px;
+    border: none;
+    background-color: #000;
+    @if $is_center
+    {
+      margin: 20px auto;
+    }
+    @else
+    {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+// aタグ前に付与するショッピングアイコン
+@mixin prefixIcon($image_path, $width: 1.5em, $height: 1.5em)
+{
+  a::before
+  {
+    content: "";
+    display: inline-block;
+    width: $width;
+    height: $height;
+    background: url($image_path) no-repeat;
+    background-size: contain;
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+}
+
+// ページごとのセクションにある見出し
+@mixin sectionIndex($base_color: $main_color, $idx_color: #000, $is_pc: true)
+{
+  .sect-index
+  {
+    text-align: center;
+
+    p
+    {
+      @if $is_pc
+      {
+        font-size: 1.8em;
+      }
+      @else
+      {
+        font-size: 1.1em;
+      }
+      letter-spacing: 0.1em;
+      color: $base_color;
+    }
+
+    .idx
+    {
+      @if $is_pc
+      {
+        font-size: 1.1em;
+      }
+      @else
+      {
+        font-size: 0.8em;
+      }
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $idx_color;
+    }
+
+    .idx::before,
+    .idx::after
+    {
+      border-top: 1px solid;
+      content: "";
+      width: 6.5em;
+    }
+
+    .idx::before
+    {
+      margin-right: 1rem;
+    }
+
+    .idx::after
+    {
+      margin-left: 1rem;
+    }
+  }
+}
+
+// サイト内共通ボタン
+@mixin sectionButton($pdng_height: 0.7rem, $pdng_width: 3.8rem, $margin: 40px 0)
+{
+  .sect-btn
+  {
+    margin: $margin;
+    text-align: center;
+  }
+
+  .btn
+  {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    display: inline-block;
+    padding: $pdng_height $pdng_width;
+    letter-spacing: 0.1em;
+    color: #212529;
+  }
+
+  a.btn-border
+  {
+    border: 1px solid #000;
+    border-radius: 0;
+    background: #fff;
+
+    &:hover
+    {
+      color: #fff;
+      background: $main_color;
+    }
+  }
+}

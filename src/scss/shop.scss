@@ -1,0 +1,105 @@
+@import "variables";
+@import "common";
+
+/* ---------------------------------------
+  SHOP
+--------------------------------------- */
+
+@include pageHeaderArea("../img/shop/title_05_shop.jpg");
+
+.shop-contents
+{
+  margin: 50px 2%;
+
+  @include sectionIndex;
+
+  .shop-info
+  {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+
+    @include sectionButton(1rem, 3rem, 6% 0);
+
+    .map-area
+    {
+      width: 50%;
+
+      img
+      {
+        height: 510px;
+      }
+    }
+
+    .info-contents
+    {
+      width: 45%;
+
+      .shop-idx
+      {
+        p
+        {
+          margin-bottom: 10px;
+        }
+
+        .title
+        {
+          padding: 10px 0;
+          margin-bottom: 20px;
+          border-top: 1px solid $gray_color_b;
+          border-bottom: 2px solid $gray_color_b;
+        }
+      }
+
+      .tel-btn
+      {
+        margin: 20px 0;
+        text-align: center;
+      }
+
+      // 電話ボタン。レイアウトが違うので共通処理は使わない。
+      .btn
+      {
+        font-size: 1.2rem;
+        line-height: 1.5;
+        display: inline-block;
+        padding: 1rem 2rem;
+        letter-spacing: 0.1em;
+        color: #000;
+      }
+
+      a.btn-border
+      {
+        border: 1px solid $sub_color;
+        border-radius: 15px;
+        background: $sub_color;
+
+        &:hover
+        {
+          border: 1px solid $main_color;
+          box-sizing: border-box;
+          color: #000;
+          background: #fff;
+        }
+      }
+
+      @include prefixIcon('../img/icon_sp.png');
+
+      .shop-location
+      {
+        p
+        {
+          padding-bottom: 5px;
+        }
+
+        hr
+        {
+          height: 1.6px;
+          margin-bottom: 15px;
+          border: none;
+          border-top: dashed 2.5px $sub_color;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,361 @@
+@import "variables";
+@import "base";
+
+/* ---------------------------------------
+  SP - 共通部分
+--------------------------------------- */
+
+// SPサイト内オンラインショップ用共通ボタン
+@mixin spOnlineShopButton($pdng_height: 0.6rem,
+                  $pdng_width: 3rem,
+                  $margin: 20px 0,
+                  $border_color: #fff,
+                  $font_color: #fff)
+{
+  .sect-btn
+  {
+    margin: $margin;
+    text-align: center;
+
+    @include prefixIcon('../img/icon_shop_white.png', 1em, 1em);
+  }
+
+  .btn
+  {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    display: inline-block;
+    padding: $pdng_height $pdng_width;
+    letter-spacing: 0.1em;
+    color: $font_color;
+  }
+
+  a.btn-border
+  {
+    border: 1px solid $border_color;
+    border-radius: 0;
+    background: #fff;
+    background-color:rgba(255, 255, 255, 0.4);
+
+    &:hover
+    {
+      color: #fff;
+      background: $main_color;
+    }
+  }
+}
+
+// 各ページのタイトル部分
+@mixin pageHeaderAreaSP($middle_img)
+{
+  .page-title-area
+  {
+    background: #F0F5F0;
+    height: 130px;
+    /* 上下左右で中央揃え */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .page-title
+  {
+    background: #fff;
+    width: 280px;
+    height: 60px;
+    letter-spacing: 0.1rem;
+    font-size: 1.5rem;
+    font-weight: normal;
+    /* 上下左右で中央揃え */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* 中サイズの背景画像 */
+  .middle-bg
+  {
+    background-image: url($middle_img);
+    min-height: 20vh;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+}
+
+/* ---------------------------------------
+  ヘッダー
+--------------------------------------- */
+
+.page-header
+{
+  display: flex;
+  height: 95px;
+
+  .main-logo
+  {
+    margin: 10px auto 10px 20px;
+
+    img
+    {
+      width: 180px;
+      height: 75px;
+    }
+  }
+
+  // SPの時はPCのヘッダー部分のリンクは非表示
+  .site-links,
+  .online-shop
+  {
+    display: none;
+  }
+}
+
+/* ハンバーガーメニュー */
+#hamburger
+{
+  .nav-toggle
+  {
+    position: fixed;
+    top: 46px;
+    right: 65px;
+    z-index: 3;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    span,
+    span::before,
+    span::after
+    {
+      content: '';
+      display: block;
+      height: 4px;
+      width: 32px;
+      border-radius: 3px;
+      background-color: $main_color;
+      position: absolute;
+    }
+
+    span::before
+    {
+      bottom: 11px;
+    }
+
+    span::after
+    {
+      top: 11px;
+    }
+
+    // メニューオープン時は真ん中の線を透明にする
+    &.open span
+    {
+      background-color: rgba(255, 255, 255, 0);
+    }
+
+    &.open span::before
+    {
+      bottom: 0;
+      background: #fff;
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+
+    &.open span::after
+    {
+      top: 0;
+      background: #fff;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+  }
+
+  & .g-nav
+  {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: $main_color;
+    background:rgba(115, 168, 118, 0.9);
+    box-sizing: border-box;
+    z-index: 2;
+    padding-top: 80px;
+    opacity: 0;
+    transition: opacity .3s linear;
+
+    &.open
+    {
+      right: 0px;
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .nav-logo
+    {
+      text-align: center;
+      margin-bottom: 5px;
+
+      img
+      {
+        width: 170px;
+        height: 70px;
+        filter: brightness(0) invert(1);
+      }
+    }
+
+    // SP用メニュー
+    .g-nav-menu
+    {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+
+      li
+      {
+        list-style: none;
+        margin: 0px 30px 0px 30px;
+
+        a
+        {
+          display: block;
+          width: 100%;
+          font-size: 14px;
+          box-sizing: border-box;
+          color: #ffffff;
+          text-decoration: none;
+          padding: 9px 15px 10px 10px;
+          position: relative;
+          text-align: center;
+        }
+      }
+    }
+
+    // ボタン
+    @include spOnlineShopButton;
+  }
+}
+
+/* ---------------------------------------
+  フッター
+--------------------------------------- */
+
+.page-footer
+{
+  padding: 50px 3%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url(../img/onlineshop.jpg);
+
+  @include sectionIndex(#fff, #fff, false);
+
+  @include spOnlineShopButton(0.6rem, 2.3rem, 40px 0 20px 0, #fff, #fff);
+}
+
+footer
+{
+  .footer-nav
+  {
+    display: flex;
+    flex-flow: column;
+    background-color: $sub_color;
+    text-align: center;
+
+    & li
+    {
+      padding: 15px 0;
+    }
+
+    // 最後だけ罫線は引かない
+    & li:not(:last-child)
+    {
+      border-bottom: 1px solid $gray_color_b;
+    }
+
+    & a
+    {
+      color: $main_color;
+      font-size: 16px;
+    }
+
+    .outside-link::after
+    {
+      content: "";
+      display: inline-block;
+      width: 1.3em;
+      height: 1.3em;
+      background: url(../img/icon_link_green.png) no-repeat;
+      background-size: contain;
+      vertical-align: middle;
+      margin-left: 15px;
+    }
+  }
+
+  .logo-area
+  {
+    padding-top: 20px;
+    background: $footer_background;
+    text-align: center;
+
+    img
+    {
+      width: 190px;
+      height: 90px;
+    }
+  }
+
+  .copyright
+  {
+    padding: 20px 0;
+    background: $footer_background;
+    text-align: center;
+    font-size: 13px;
+
+    & p
+    {
+      color: $sub_color;
+    }
+  }
+}
+
+/* ---------------------------------------
+  TOPと製品詳細画面の製品一覧
+  (同じスタイルなのでこちらのファイルに定義)
+--------------------------------------- */
+.products
+{
+  margin: 40px 2%;
+
+  @include sectionIndex($main_color, #000, false);
+
+  .product-list
+  {
+    margin-top: 40px;
+
+    .item
+    {
+      margin: 5px 25px;
+      display: flex;
+
+      img
+      {
+        width: 80%;
+      }
+
+      p
+      {
+        font-size: 14px;
+        width: 50%;
+        text-align: center;
+        margin: auto;
+      }
+    }
+  }
+
+  @include sectionButton(0.6rem, 4.2rem);
+}

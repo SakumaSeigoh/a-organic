@@ -1,0 +1,272 @@
+@import "variables";
+@import "base";
+
+/* ---------------------------------------
+  PC - 共通部分
+--------------------------------------- */
+
+// 各ページのタイトル部分
+@mixin pageHeaderArea($middle_img)
+{
+  .page-title-area
+  {
+    background: #F0F5F0;
+    height: 150px;
+    /* 上下左右で中央揃え */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .page-title
+  {
+    background: #fff;
+    width: 260px;
+    height: 100px;
+    letter-spacing: 0.1rem;
+    font-size: 1.5rem;
+    font-weight: normal;
+    /* 上下左右で中央揃え */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* 中サイズの背景画像 */
+  .middle-bg
+  {
+    background-image: url($middle_img);
+    min-height: 50vh;
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
+}
+
+
+/* ---------------------------------------
+  ヘッダー
+--------------------------------------- */
+
+.page-header
+{
+  display: flex;
+
+  div
+  {
+    height: 60px;
+  }
+
+  .main-logo
+  {
+    margin-right: auto;
+    margin-left: 20px;
+
+    img
+    {
+      width: 140px;
+    }
+  }
+}
+
+.main-nav
+{
+  display: flex;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  margin-top: 13px;
+  margin-right: 65px;
+  list-style: none;
+
+  & li
+  {
+    margin-left: 45px;
+  }
+
+  & a
+  {
+    color: #432;
+  }
+
+  & p
+  {
+    display: block;
+    text-align: center;
+  }
+
+  .wd-index
+  {
+    font-size: 0.4em;
+    color: $main_color;
+  }
+}
+
+.online-shop
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $main_color;
+  width: 180px;
+
+  a
+  {
+    color: #fff;
+  }
+
+  @include prefixIcon('../img/icon_shop_white.png');
+}
+
+// PCの時はハンバーガーメニューは非表示
+#hamburger
+{
+  display: none;
+}
+
+/* ---------------------------------------
+  フッター
+--------------------------------------- */
+
+.page-footer
+{
+  padding: 50px 3%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url(../img/onlineshop.jpg);
+
+  @include sectionIndex(#fff, #fff);
+
+  .sect-btn
+  {
+    font-size: 1.2rem;
+    margin: 40px 0 20px 0;
+    text-align: center;
+  }
+
+  .btn
+  {
+    line-height: 1.5;
+    display: inline-block;
+    padding: 0.7rem 2.2rem;
+    letter-spacing: 0.1em;
+    color: #fff;
+  }
+
+  a.btn-border
+  {
+    border: 1px solid #fff;
+    border-radius: 0;
+    background-color:rgba(255, 255, 255, 0.4);
+
+    &:hover
+    {
+      color: #fff;
+      background: $main_color;
+    }
+  }
+
+  @include prefixIcon('../img/icon_shop_white.png');
+}
+
+footer
+{
+  background: $footer_background;
+
+  .site-links
+  {
+    padding: 20px 0;
+  }
+
+  .footer-nav
+  {
+    display: flex;
+    justify-content: center;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    list-style: none;
+
+    & li
+    {
+      margin-left: 30px;
+    }
+
+    & a
+    {
+      color: #fff;
+    }
+
+    & p
+    {
+      display: block;
+      text-align: center;
+    }
+
+    .outside-link::after
+    {
+      content: "";
+      display: inline-block;
+      width: 1.3em;
+      height: 1.3em;
+      background: url(../img/icon_link_white.png) no-repeat;
+      background-size: contain;
+      vertical-align: middle;
+      margin-left: 10px;
+    }
+  }
+
+  .logo-area
+  {
+    text-align: center;
+
+    img
+    {
+      width: 280px;
+      height: 125px;
+    }
+  }
+
+  .copyright
+  {
+    padding: 10px 0;
+    text-align: center;
+
+    p
+    {
+      font-size: 0.8rem;
+      color: #fff;
+    }
+  }
+}
+
+/* ---------------------------------------
+  TOPと製品詳細画面の製品一覧
+  (同じスタイルなのでこちらのファイルに定義)
+--------------------------------------- */
+.products
+{
+  margin: 50px 3%;
+
+  @include sectionIndex;
+
+  .product-list
+  {
+    margin-top: 50px;
+    display: flex;
+
+    .item
+    {
+      margin: 10px;
+
+      p
+      {
+        padding-top: 20px;
+        text-align: center;
+      }
+    }
+  }
+
+  // ボタン
+  @include sectionButton(0.6rem, 4.7rem);
+}

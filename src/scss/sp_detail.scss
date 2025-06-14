@@ -1,0 +1,127 @@
+@import "variables";
+@import "sp_common";
+
+/* ---------------------------------------
+  Detail（製品詳細画面）
+--------------------------------------- */
+
+@include pageHeaderAreaSP("../img/products/title_03_lotion.jpg");
+
+.product-detail
+{
+  margin: 40px 2%;
+
+  @include sectionIndex($main_color, #000, false);
+
+  .product-contents
+  {
+    margin-top: 40px;
+
+    img
+    {
+      width: 90%;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .pdct-detail
+    {
+      margin: 30px 25px 10px 25px;
+    }
+
+    .pdct-name
+    {
+      font-size: 1.5rem;
+      padding-bottom: 5px;
+    }
+
+    .pdct-index
+    {
+      color: $gray_color_a;
+      letter-spacing: 0.1rem;
+      margin-bottom: 15px;
+    }
+
+    .pdct-description
+    {
+      height: 50%;
+      margin-bottom: 20px;
+
+      p
+      {
+        font-size: 15px;
+        padding-bottom: 10px;
+      }
+    }
+
+    .pdct-size
+    {
+      color: $gray_color_a;
+      font-size: 1.2rem;
+    }
+
+    .pdct-price
+    {
+      color: $main_color;
+      font-size: 1.7rem;
+      padding-bottom: 6px;
+    }
+
+    .online-shop-btn
+    {
+      margin: 20px 0;
+      text-align: center;
+
+      .btn
+      {
+        font-size: 1.2rem;
+        line-height: 1.5;
+        display: inline-block;
+        padding: 1rem 1.8rem;
+        letter-spacing: 0.1em;
+        color: #fff;
+      }
+
+      a.btn-border
+      {
+        border: 1px solid $main_color;
+        border-radius: 0;
+        background: $main_color;
+
+        &:hover
+        {
+          border: 1px solid $main_color;
+          box-sizing: border-box;
+          color: $main_color;
+          background: #fff;
+        }
+      }
+    }
+  }
+
+  .product-manual
+  {
+    margin-top: 50px;
+
+    .product-usage,
+    .product-feature
+    {
+      width: 90%;
+      margin: 40px auto 40px auto;
+
+      .title
+      {
+        padding: 10px 0;
+        font-size: 18px;
+        margin-bottom: 20px;
+        border-top: 1px solid $gray_color_b;
+        border-bottom: 3px solid $gray_color_b;
+      }
+
+      .explanation
+      {
+        font-size: 15px;
+      }
+    }
+  }
+}

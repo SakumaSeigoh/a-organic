@@ -1,0 +1,116 @@
+@import "variables";
+@import "sp_common";
+
+/* ---------------------------------------
+  SHOP
+--------------------------------------- */
+
+@include pageHeaderAreaSP("../img/shop/title_05_shop.jpg");
+
+.shop-contents
+{
+  margin: 40px 2%;
+
+  @include sectionIndex($main_color, #000, false);
+
+  .shop-info
+  {
+    margin: 40px 10px 40px 10px;
+    display: flex;
+    flex-flow: column;
+
+    .info-contents
+    {
+      order: 1;
+
+      .shop-idx
+      {
+        p
+        {
+          margin-bottom: 10px;
+        }
+
+        .title
+        {
+          font-size: 15px;
+          padding: 10px 0;
+          margin-bottom: 20px;
+          border-top: 1px solid $gray_color_b;
+          border-bottom: 3px solid $gray_color_b;
+        }
+
+        .explanation
+        {
+          font-size: 14px;
+        }
+      }
+
+      .tel-btn
+      {
+        margin: 40px 0;
+        text-align: center;
+      }
+
+      .btn
+      {
+        font-size: 1.2rem;
+        line-height: 1.5;
+        display: inline-block;
+        padding: 1rem 2rem;
+        letter-spacing: 0.1em;
+        color: #000;
+      }
+
+      a.btn-border
+      {
+        border: 1px solid $sub_color;
+        border-radius: 15px;
+        background: $sub_color;
+
+        &:hover
+        {
+          border: 1px solid $main_color;
+          box-sizing: border-box;
+          color: #000;
+          background: #fff;
+        }
+      }
+
+      @include prefixIcon('../img/icon_sp.png');
+
+      .shop-location
+      {
+        margin-bottom: 40px;
+
+        p
+        {
+          font-size: 15px;
+          padding-bottom: 5px;
+        }
+
+        hr
+        {
+          height: 1.6px;
+          margin-bottom: 15px;
+          border: none;
+          border-top: dashed 2.5px $sub_color;
+        }
+      }
+    }
+
+    .map-area
+    {
+      order: 2;
+
+      img
+      {
+        display: block;
+        margin: 0 auto;
+        width: 350px;
+        height: 350px;
+      }
+    }
+
+    @include sectionButton(0.7rem, 3.5rem, 8% 0);
+  }
+}

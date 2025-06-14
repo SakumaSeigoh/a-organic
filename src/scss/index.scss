@@ -1,0 +1,108 @@
+@import "variables";
+@import "common";
+
+/* ---------------------------------------
+  HOME
+--------------------------------------- */
+
+/* メイン背景画像 */
+.big-bg
+{
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-image: url(../img/top/main.jpg);
+  min-height: 100vh;
+}
+
+.concept
+{
+  margin: 50px 20%;
+
+  // 見出し
+  @include sectionIndex;
+
+  /* 本文 */
+  .sect-main p
+  {
+    margin-top: 35px;
+    text-align: center;
+  }
+
+  // ボタン
+  @include sectionButton;
+}
+
+.about
+{
+  background: $base_color;
+  padding: 40px 30px;
+
+  // 見出し
+  @include sectionIndex;
+
+  .title
+  {
+    letter-spacing: 0.1em;
+    margin-bottom: 10px;
+  }
+
+  .about-catch-img
+  {
+    width: 50%;
+
+    img
+    {
+      object-fit: cover;
+      object-position: center left;
+    }
+  }
+
+  /* よくあるご質問 */
+  .question
+  {
+    margin-top: 50px;
+    height: 400px;
+    display: flex;
+
+    @include commonLine;
+
+    .q-description
+    {
+      margin-left: 40px;
+      width: 50%;
+
+      p
+      {
+        margin-bottom: 20px;
+      }
+
+      // ボタン
+      @include sectionButton(0.6rem, 4.7rem);
+    }
+  }
+
+  /* オリジナルショップ */
+  .origin-shop
+  {
+    margin-top: 50px;
+    height: 400px;
+    display: flex;
+
+    @include commonLine;
+
+    .os-description
+    {
+      margin-right: 40px;
+      width: 50%;
+
+      p
+      {
+        margin-bottom: 20px;
+      }
+
+      // ボタン
+      @include sectionButton(0.6rem, 4.7rem);
+    }
+  }
+}

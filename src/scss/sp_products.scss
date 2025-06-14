@@ -1,0 +1,78 @@
+@import "variables";
+@import "sp_common";
+
+/* ---------------------------------------
+  Products
+--------------------------------------- */
+
+@include pageHeaderAreaSP("../img/products/title_02_products.jpg");
+
+.product-list
+{
+  margin: 40px 2%;
+
+  @include sectionIndex($main_color, #000, false);
+
+  .product-item
+  {
+    position: relative;
+    margin-top: 40px;
+    display: flex;
+    flex-flow: column;
+
+    .p-img
+    {
+      width: 95%;
+      margin: auto;
+    }
+
+    .p-description
+    {
+      position: absolute;
+      text-align: center;
+      width: 80%;
+      height: 310px;
+      padding: 20px;
+      background-color:rgba(255, 255, 255, 0.7);
+      top: 90%;
+      left: 10%;
+      z-index: 1;
+    }
+
+    .p-title
+    {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+    }
+
+    .p-index
+    {
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 20px;
+    }
+
+    hr
+    {
+      width: 90%;
+      height: 1.6px;
+      margin: 0 auto;
+      background-color: #000;
+      border: none;
+    }
+
+    .p-text
+    {
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    @include sectionButton(0.4rem, 4.1rem, 10% 0);
+  }
+
+  // position指定で画像と説明エリアを重ねているため枠のdivタグ下にマージンを開ける
+  .product-item:not(:first-child)
+  {
+    margin-bottom: 305px;
+  }
+}

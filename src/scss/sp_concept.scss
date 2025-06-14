@@ -1,0 +1,111 @@
+@import "variables";
+@import "sp_common";
+
+/* ---------------------------------------
+  Concept
+--------------------------------------- */
+
+@include pageHeaderAreaSP("../img/concept/title_01_concept.jpg");
+
+.component
+{
+  margin: 40px 2%;
+
+  // 見出し
+  @include sectionIndex($main_color, #000, false);
+
+  /* 本文 */
+  .sect-main p
+  {
+    margin: 40px 0 40px 0;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .component-img-area
+  {
+    display: grid;
+    gap: 20px;
+    row-gap: 40px;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 5%;
+
+    & > *
+    {
+      text-align: center;
+      font-size: 1em;
+    }
+
+    img
+    {
+      height: 140px;
+      width: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+}
+
+.promise
+{
+  background: $base_color;
+  padding: 40px 30px;
+
+  // 見出し
+  @include sectionIndex($main_color, #000, false);
+
+  .p-wrapper
+  {
+    margin-top: 50px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+  }
+
+  .sec-frame
+  {
+    position: relative;
+    margin: auto;
+    margin-bottom: 50px;
+    height: 100%;
+    padding: 15px;
+    border: 1px solid $main_color;
+    border-radius: 10px;
+    background: #fff;
+    box-sizing: border-box;
+
+    p
+    {
+      padding: 10px 0;
+    }
+
+    .p-index
+    {
+      margin-top: 15px;
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
+      color: $main_color;
+    }
+
+    .p-desc
+    {
+      font-size: 14px;
+    }
+  }
+
+  .sec-no
+  {
+    position: absolute;
+    top: -10%;
+    left: 42%;
+    background: $main_color;
+    color: #fff;
+    font-size: 1.5rem;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    line-height: 50px;
+    text-align: center;
+  }
+}

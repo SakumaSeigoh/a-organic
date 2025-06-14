@@ -1,0 +1,554 @@
+@charset "UTF-8";
+/* ---------------------------------------
+  サイト全体の共通設定
+--------------------------------------- */
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: "Yu Gothic Medium", "游ゴシック Medium", "YuGothic", "游ゴシック", "ヒラギノ角ゴ Pro W3", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.wrapper {
+  margin: 0 auto;
+  padding: 0 3%;
+}
+
+/* ---------------------------------------
+  サイト全体で使用する共通部品
+--------------------------------------- */
+/* ---------------------------------------
+  PC - 共通部分
+--------------------------------------- */
+/* ---------------------------------------
+  ヘッダー
+--------------------------------------- */
+.page-header {
+  display: flex;
+}
+
+.page-header div {
+  height: 60px;
+}
+
+.page-header .main-logo {
+  margin-right: auto;
+  margin-left: 20px;
+}
+
+.page-header .main-logo img {
+  width: 140px;
+}
+
+.main-nav {
+  display: flex;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  margin-top: 13px;
+  margin-right: 65px;
+  list-style: none;
+}
+
+.main-nav li {
+  margin-left: 45px;
+}
+
+.main-nav a {
+  color: #432;
+}
+
+.main-nav p {
+  display: block;
+  text-align: center;
+}
+
+.main-nav .wd-index {
+  font-size: 0.4em;
+  color: #73A776;
+}
+
+.online-shop {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #73A776;
+  width: 180px;
+}
+
+.online-shop a {
+  color: #fff;
+}
+
+.online-shop a::before {
+  content: "";
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  background: url("../img/icon_shop_white.png") no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+#hamburger {
+  display: none;
+}
+
+/* ---------------------------------------
+  フッター
+--------------------------------------- */
+.page-footer {
+  padding: 50px 3%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url(../img/onlineshop.jpg);
+}
+
+.page-footer .sect-index {
+  text-align: center;
+}
+
+.page-footer .sect-index p {
+  font-size: 1.8em;
+  letter-spacing: 0.1em;
+  color: #fff;
+}
+
+.page-footer .sect-index .idx {
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.page-footer .sect-index .idx::before,
+.page-footer .sect-index .idx::after {
+  border-top: 1px solid;
+  content: "";
+  width: 6.5em;
+}
+
+.page-footer .sect-index .idx::before {
+  margin-right: 1rem;
+}
+
+.page-footer .sect-index .idx::after {
+  margin-left: 1rem;
+}
+
+.page-footer .sect-btn {
+  font-size: 1.2rem;
+  margin: 40px 0 20px 0;
+  text-align: center;
+}
+
+.page-footer .btn {
+  line-height: 1.5;
+  display: inline-block;
+  padding: 0.7rem 2.2rem;
+  letter-spacing: 0.1em;
+  color: #fff;
+}
+
+.page-footer a.btn-border {
+  border: 1px solid #fff;
+  border-radius: 0;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.page-footer a.btn-border:hover {
+  color: #fff;
+  background: #73A776;
+}
+
+.page-footer a::before {
+  content: "";
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  background: url("../img/icon_shop_white.png") no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+footer {
+  background: #4C524C;
+}
+
+footer .site-links {
+  padding: 20px 0;
+}
+
+footer .footer-nav {
+  display: flex;
+  justify-content: center;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  list-style: none;
+}
+
+footer .footer-nav li {
+  margin-left: 30px;
+}
+
+footer .footer-nav a {
+  color: #fff;
+}
+
+footer .footer-nav p {
+  display: block;
+  text-align: center;
+}
+
+footer .footer-nav .outside-link::after {
+  content: "";
+  display: inline-block;
+  width: 1.3em;
+  height: 1.3em;
+  background: url(../img/icon_link_white.png) no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
+footer .logo-area {
+  text-align: center;
+}
+
+footer .logo-area img {
+  width: 280px;
+  height: 125px;
+}
+
+footer .copyright {
+  padding: 10px 0;
+  text-align: center;
+}
+
+footer .copyright p {
+  font-size: 0.8rem;
+  color: #fff;
+}
+
+/* ---------------------------------------
+  TOPと製品詳細画面の製品一覧
+  (同じスタイルなのでこちらのファイルに定義)
+--------------------------------------- */
+.products {
+  margin: 50px 3%;
+}
+
+.products .sect-index {
+  text-align: center;
+}
+
+.products .sect-index p {
+  font-size: 1.8em;
+  letter-spacing: 0.1em;
+  color: #73A776;
+}
+
+.products .sect-index .idx {
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+}
+
+.products .sect-index .idx::before,
+.products .sect-index .idx::after {
+  border-top: 1px solid;
+  content: "";
+  width: 6.5em;
+}
+
+.products .sect-index .idx::before {
+  margin-right: 1rem;
+}
+
+.products .sect-index .idx::after {
+  margin-left: 1rem;
+}
+
+.products .product-list {
+  margin-top: 50px;
+  display: flex;
+}
+
+.products .product-list .item {
+  margin: 10px;
+}
+
+.products .product-list .item p {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.products .sect-btn {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.products .btn {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  display: inline-block;
+  padding: 0.6rem 4.7rem;
+  letter-spacing: 0.1em;
+  color: #212529;
+}
+
+.products a.btn-border {
+  border: 1px solid #000;
+  border-radius: 0;
+  background: #fff;
+}
+
+.products a.btn-border:hover {
+  color: #fff;
+  background: #73A776;
+}
+
+/* ---------------------------------------
+  HOME
+--------------------------------------- */
+/* メイン背景画像 */
+.big-bg {
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-image: url(../img/top/main.jpg);
+  min-height: 100vh;
+}
+
+.concept {
+  margin: 50px 20%;
+  /* 本文 */
+}
+
+.concept .sect-index {
+  text-align: center;
+}
+
+.concept .sect-index p {
+  font-size: 1.8em;
+  letter-spacing: 0.1em;
+  color: #73A776;
+}
+
+.concept .sect-index .idx {
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+}
+
+.concept .sect-index .idx::before,
+.concept .sect-index .idx::after {
+  border-top: 1px solid;
+  content: "";
+  width: 6.5em;
+}
+
+.concept .sect-index .idx::before {
+  margin-right: 1rem;
+}
+
+.concept .sect-index .idx::after {
+  margin-left: 1rem;
+}
+
+.concept .sect-main p {
+  margin-top: 35px;
+  text-align: center;
+}
+
+.concept .sect-btn {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.concept .btn {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  display: inline-block;
+  padding: 0.7rem 3.8rem;
+  letter-spacing: 0.1em;
+  color: #212529;
+}
+
+.concept a.btn-border {
+  border: 1px solid #000;
+  border-radius: 0;
+  background: #fff;
+}
+
+.concept a.btn-border:hover {
+  color: #fff;
+  background: #73A776;
+}
+
+.about {
+  background: #FDF7F3;
+  padding: 40px 30px;
+  /* よくあるご質問 */
+  /* オリジナルショップ */
+}
+
+.about .sect-index {
+  text-align: center;
+}
+
+.about .sect-index p {
+  font-size: 1.8em;
+  letter-spacing: 0.1em;
+  color: #73A776;
+}
+
+.about .sect-index .idx {
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+}
+
+.about .sect-index .idx::before,
+.about .sect-index .idx::after {
+  border-top: 1px solid;
+  content: "";
+  width: 6.5em;
+}
+
+.about .sect-index .idx::before {
+  margin-right: 1rem;
+}
+
+.about .sect-index .idx::after {
+  margin-left: 1rem;
+}
+
+.about .title {
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
+}
+
+.about .about-catch-img {
+  width: 50%;
+}
+
+.about .about-catch-img img {
+  object-fit: cover;
+  object-position: center left;
+}
+
+.about .question {
+  margin-top: 50px;
+  height: 400px;
+  display: flex;
+}
+
+.about .question hr {
+  width: 50%;
+  height: 2px;
+  border: none;
+  background-color: #000;
+  margin-bottom: 20px;
+}
+
+.about .question .q-description {
+  margin-left: 40px;
+  width: 50%;
+}
+
+.about .question .q-description p {
+  margin-bottom: 20px;
+}
+
+.about .question .q-description .sect-btn {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.about .question .q-description .btn {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  display: inline-block;
+  padding: 0.6rem 4.7rem;
+  letter-spacing: 0.1em;
+  color: #212529;
+}
+
+.about .question .q-description a.btn-border {
+  border: 1px solid #000;
+  border-radius: 0;
+  background: #fff;
+}
+
+.about .question .q-description a.btn-border:hover {
+  color: #fff;
+  background: #73A776;
+}
+
+.about .origin-shop {
+  margin-top: 50px;
+  height: 400px;
+  display: flex;
+}
+
+.about .origin-shop hr {
+  width: 50%;
+  height: 2px;
+  border: none;
+  background-color: #000;
+  margin-bottom: 20px;
+}
+
+.about .origin-shop .os-description {
+  margin-right: 40px;
+  width: 50%;
+}
+
+.about .origin-shop .os-description p {
+  margin-bottom: 20px;
+}
+
+.about .origin-shop .os-description .sect-btn {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.about .origin-shop .os-description .btn {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  display: inline-block;
+  padding: 0.6rem 4.7rem;
+  letter-spacing: 0.1em;
+  color: #212529;
+}
+
+.about .origin-shop .os-description a.btn-border {
+  border: 1px solid #000;
+  border-radius: 0;
+  background: #fff;
+}
+
+.about .origin-shop .os-description a.btn-border:hover {
+  color: #fff;
+  background: #73A776;
+}

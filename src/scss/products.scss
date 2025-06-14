@@ -1,0 +1,84 @@
+@import "variables";
+@import "common";
+
+/* ---------------------------------------
+  Products
+--------------------------------------- */
+
+@mixin product-wrapper($class_name: '.product-item-odd', $fl_direction: row, $left_position: 53%)
+{
+  #{$class_name}
+  {
+    position: relative;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: $fl_direction;
+
+    .p-img
+    {
+      width: 57%;
+      height: 50%;
+    }
+
+    .p-description
+    {
+      text-align: center;
+      width: 45%;
+      height: 80%;
+      padding: 20px;
+      background-color:rgba(255, 255, 255, 0.7);
+      position: absolute;
+      left: $left_position;
+      top: 10%;
+
+      .p-title
+      {
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+      }
+
+      .p-index
+      {
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
+        margin-bottom: 20px;
+      }
+
+      hr
+      {
+        width: 90%;
+        height: 1.6px;
+        margin: 0 auto;
+        background-color: #000;
+        border: none;
+      }
+
+      .p-text
+      {
+        margin-top: 20px;
+      }
+
+      @include sectionButton(0.8rem, 6.1rem, 6% 0);
+    }
+  }
+}
+
+@include pageHeaderArea("../img/products/title_02_products.jpg");
+
+.product-list
+{
+  margin: 50px 2%;
+
+  @include sectionIndex;
+
+  .sect-main p
+  {
+    margin-top: 35px;
+    text-align: center;
+  }
+
+  // 製品リストの1枚目〜3枚目
+  @include product-wrapper();
+
+  @include product-wrapper('.product-item-even', row-reverse, 2%);
+}

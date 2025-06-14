@@ -1,0 +1,97 @@
+@import "variables";
+@import "sp_common";
+
+/* ---------------------------------------
+  SP - HOME
+--------------------------------------- */
+
+/* メイン背景画像 */
+.big-bg
+{
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url(../img/top/main.jpg);
+  min-height: 50vh;
+}
+
+.concept
+{
+  margin: 40px 5%;
+
+  @include sectionIndex($main_color, #000, false);
+
+  .sect-main p
+  {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  @include sectionButton(0.6rem, 4.5rem);
+}
+
+.about
+{
+  background: $base_color;
+  padding: 30px 30px;
+
+  @include sectionIndex($main_color, #000, false);
+
+  .title
+  {
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    margin: 20px 0px 10px 0px;
+    text-align: center;
+  }
+
+  .question
+  {
+    margin-top: 35px;
+
+    @include commonLine(40%, true);
+
+    .q-description
+    {
+      margin: 20px 10px;
+
+      p
+      {
+        margin-bottom: 20px;
+        font-size: 14px;
+      }
+
+      @include sectionButton(0.6rem, 5.8rem);
+    }
+  }
+
+  .origin-shop
+  {
+    // PC版だと画像と説明の位置が逆なので並び替える
+    display: flex;
+    flex-flow: column;
+
+    @include commonLine(40%, true);
+
+    .os-description
+    {
+      margin: 20px 10px;
+      order: 2; // 画像の後に説明
+
+      p
+      {
+        margin-bottom: 20px;
+        font-size: 14px;
+      }
+
+      @include sectionButton(0.6rem, 5.5rem, 40px 0 10px 0);
+    }
+
+    .about-catch-img
+    {
+      margin-top: 15px;
+      order: 1; // 説明の前に画像
+    }
+  }
+}

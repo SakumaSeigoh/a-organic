@@ -1,0 +1,63 @@
+@import "variables";
+@import "common";
+
+/* ---------------------------------------
+  FAQ
+--------------------------------------- */
+
+@include pageHeaderArea("../img/faq/title_04_faq.jpg");
+
+.faq-list
+{
+  margin: 50px 2%;
+
+  @include sectionIndex;
+
+  .sect-main p
+  {
+    margin: 35px 0;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+
+  #question
+  {
+    .q-title
+    {
+      position: relative;
+      cursor: pointer;
+      margin: 20px auto;
+      width: 90%;
+      height: 60px;
+      padding-left: 20px;
+      background: $sub_color;
+      color: $main_color;
+      line-height: 3.8rem;
+
+      .q-btn
+      {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        background:url(../img/faq/toggle_close.png) no-repeat right top;
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+
+        &.selected
+        {
+          background:url(../img/faq/toggle_open.png) no-repeat right top;
+        }
+      }
+    }
+
+    .q-answer
+    {
+      margin: 0 auto;
+      width: 90%;
+      height: auto;
+      padding: 0 20px;
+      display: none;
+    }
+  }
+}

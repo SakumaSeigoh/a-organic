@@ -1,0 +1,105 @@
+@import "variables";
+@import "common";
+
+/* ---------------------------------------
+  Concept
+--------------------------------------- */
+
+@include pageHeaderArea("../img/concept/title_01_concept.jpg");
+
+.component
+{
+  margin: 50px 2%;
+
+  // 見出し
+  @include sectionIndex;
+
+  /* 本文 */
+  .sect-main p
+  {
+    margin-top: 35px;
+    text-align: center;
+  }
+
+  .component-img-area
+  {
+    display: grid;
+    gap: 20px;
+    /* 要素の幅が200pxより小さくならず画面の幅に合わせて伸縮 */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin-top: 5%;
+
+    & > *
+    {
+      text-align: center;
+      font-size: 1em;
+    }
+
+    img
+    {
+      height: 220px;
+      width: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+}
+
+.promise
+{
+  background: $base_color;
+  padding: 40px 30px;
+
+  // 見出し
+  @include sectionIndex;
+
+  .p-wrapper
+  {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .sec-frame
+    {
+      position: relative;
+      width: 45%;
+      height: 220px;
+      padding: 15px;
+      border: 1px solid $main_color;
+      border-radius: 10px;
+      background: #fff;
+      box-sizing: border-box;
+      margin-bottom: 50px;
+
+      p
+      {
+        padding: 10px 0;
+      }
+
+      .p-index
+      {
+        margin-top: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        color: $main_color;
+      }
+    }
+
+    .sec-no
+    {
+      position: absolute;
+      top: -13%;
+      left: 46%;
+      background: $main_color;
+      color: #fff;
+      font-size: 1.5rem;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      line-height: 50px;
+      text-align: center;
+    }
+  }
+}
